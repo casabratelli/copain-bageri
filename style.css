@@ -1,49 +1,75 @@
 body {
-    font-family: 'Georgia', serif;
+    font-family: sans-serif;
     margin: 0;
-    padding: 0;
-    background: #fffaf3;
-    color: #333;
-    line-height: 1.6;
+    background-color: #fffaf3;
 }
-header {
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
     background: #d8bfa3;
-    color: #fff;
-    padding: 2em 1em;
-    text-align: center;
-}
-main {
     padding: 1em;
-    max-width: 800px;
-    margin: auto;
 }
-section {
-    margin-bottom: 2em;
+nav a {
+    text-decoration: none;
+    color: #3e2f23;
+    font-weight: bold;
+}
+.hero {
+    background: url('placeholder-hero.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 5em 1em;
+}
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+.btn, .btn-small {
+    display: inline-block;
+    background: #6d4c41;
+    color: #fff;
+    padding: 0.7em 1.2em;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1em;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1.5rem;
+    padding: 2em;
+}
+.card {
+    background: #fff;
+    padding: 1em;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.text-img {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2em;
+    gap: 2em;
+}
+.text-img img {
+    flex: 1 1 300px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+.text-img div {
+    flex: 1 1 300px;
 }
 footer {
+    background: #d8bfa3;
+    color: #3e2f23;
     text-align: center;
-    padding: 1em;
-    background: #f0e6d2;
-    color: #333;
-}
-a {
-    color: #6d4c41;
-}
-input, textarea {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-button {
-    background-color: #6d4c41;
-    color: white;
-    border: none;
-    padding: 0.7em 1.5em;
-    border-radius: 4px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #5a3d32;
+    padding: 2em;
 }
