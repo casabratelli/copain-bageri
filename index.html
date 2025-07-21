@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copain Bageri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Copain Bageri</h1>
+        <p>Hantverksbageri med hjärta för det goda 🍞</p>
+    </header>
+    <main>
+        <section>
+            <h2>Om oss</h2>
+            <p>Copain är ett litet bageri som drivs av passion för bröd, människor och hantverk. Vi bakar långjäst bröd med ekologiska råvaror i fokus.</p>
+        </section>
+        <section>
+            <h2>Sortiment</h2>
+            <ul>
+                <li>Levain</li>
+                <li>Surdegsbaguetter</li>
+                <li>Kanelbullar</li>
+                <li>Småkakor</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Kontakt</h2>
+            <p>📍 Adress: Brödgatan 1, 123 45 Bakstad</p>
+            <p>📧 E-post: <a href="mailto:hej@copain.se">hej@copain.se</a></p>
+
+            <form name="kontakt" method="POST" data-netlify="true" action="/tack.html">
+                <input type="hidden" name="form-name" value="kontakt">
+
+                <label for="namn">Namn:</label>
+                <input type="text" name="namn" required>
+
+                <label for="email">E-post:</label>
+                <input type="email" name="email" required>
+
+                <label for="meddelande">Meddelande:</label>
+                <textarea name="meddelande" rows="4" required></textarea>
+
+                <button type="submit">Skicka</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Copain Bageri</p>
+    </footer>
+</body>
+</html>

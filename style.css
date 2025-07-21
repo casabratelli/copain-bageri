@@ -1,0 +1,49 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background: #fffaf3;
+    color: #333;
+    line-height: 1.6;
+}
+header {
+    background: #d8bfa3;
+    color: #fff;
+    padding: 2em 1em;
+    text-align: center;
+}
+main {
+    padding: 1em;
+    max-width: 800px;
+    margin: auto;
+}
+section {
+    margin-bottom: 2em;
+}
+footer {
+    text-align: center;
+    padding: 1em;
+    background: #f0e6d2;
+    color: #333;
+}
+a {
+    color: #6d4c41;
+}
+input, textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    background-color: #6d4c41;
+    color: white;
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #5a3d32;
+}
