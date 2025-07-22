@@ -12,6 +12,7 @@
             <a href="#">Hem</a>
             <a href="#om-oss">Om oss</a>
             <a href="#sortiment">Sortiment</a>
+            <a href="#bestall">Förbeställ</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
     </header>
@@ -49,10 +50,37 @@
         </div>
     </section>
 
+    <section id="bestall" class="form-section">
+        <h2>Förbeställning</h2>
+        <p>Planera ditt besök och förbeställ ditt favoritbröd eller bullar direkt här.</p>
+        <form name="bestallning" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/tack.html">
+            <input type="hidden" name="form-name" value="bestallning" />
+            <p class="hidden">
+                <label>Fyll inte i detta om du är människa: <input name="bot-field" /></label>
+            </p>
+            <p>
+                <label for="name">Namn:</label>
+                <input type="text" id="name" name="name" required>
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+            <p>
+                <label for="message">Din beställning:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </p>
+            <div data-netlify-recaptcha="true"></div>
+            <p>
+                <button type="submit" class="btn">Skicka beställning</button>
+            </p>
+        </form>
+    </section>
+
     <footer id="kontakt">
         <h3>Kontakt</h3>
         <p>Mail: bageriet@copain.se</p>
-        <p>Adress: Sankt Sigfrids Plan 7, 123 45 Bakby</p>
+        <p>Adress: Sankt Sigfrids Plan 7, 412 66 Göteborg</p>
     </footer>
 </body>
 </html>

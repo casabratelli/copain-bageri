@@ -1,23 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@400;700&display=swap');
+
 body {
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0;
-    background-color: #fffaf3;
+    background-color: #F9F6F1; /* Ljus brödfärg */
+    color: #4A4A4A; /* Mörkgrå för text */
 }
+
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+}
+
+
 nav {
     display: flex;
     justify-content: center;
     gap: 1.5em;
-    background: #d8bfa3;
+    background: #004225; /* British Racing Green */
     padding: 1em;
 }
 nav a {
     text-decoration: none;
-    color: #3e2f23;
+    color: #F9F6F1; /* Ljus brödfärg */
     font-weight: bold;
 }
 .hero {
     background: url('placeholder-hero.jpg') center/cover no-repeat;
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 5em 1em;
 }
@@ -27,13 +36,19 @@ nav a {
 }
 .btn, .btn-small {
     display: inline-block;
-    background: #6d4c41;
+    background: #004225; /* British Racing Green */
     color: #fff;
     padding: 0.7em 1.2em;
     border-radius: 4px;
     text-decoration: none;
     margin-top: 1em;
+    transition: background-color 0.3s ease;
 }
+
+.btn:hover, .btn-small:hover {
+    background: #00331e; /* Mörkare grön vid hover */
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
@@ -45,8 +60,60 @@ nav a {
     padding: 1em;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
+
+.form-section {
+    background-color: #fff;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.form-section h2 {
+    text-align: center;
+    color: #004225; /* British Racing Green */
+}
+
+.form-section p {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+form p {
+    margin-bottom: 1em;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #004225; /* British Racing Green */
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
 .card img {
     width: 100%;
     height: auto;
@@ -68,8 +135,8 @@ nav a {
     flex: 1 1 300px;
 }
 footer {
-    background: #d8bfa3;
-    color: #3e2f23;
+    background: #004225; /* British Racing Green */
+    color: #F9F6F1; /* Ljus brödfärg */
     text-align: center;
     padding: 2em;
 }
