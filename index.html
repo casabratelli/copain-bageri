@@ -11,90 +11,173 @@
     <header>
         <img src="logo_green_clove_transparent.png" alt="Copain Bageri Logotyp" class="header-logo">
         <nav>
-            <a href="#">Hem</a>
-            <a href="#om-oss">Om oss</a>
-            <a href="#sortiment">Sortiment</a>
-            <a href="#bestall">Förbeställ</a>
-            <a href="#kontakt">Kontakt</a>
+            <a href="#" data-key="navHome">Hem</a>
+            <a href="#om-oss" data-key="navAbout">Om oss</a>
+            <a href="#sortiment" data-key="navProducts">Sortiment</a>
+            <a href="#bestall" data-key="navOrder">Förbeställ</a>
+            <a href="#kontakt" data-key="navContact">Kontakt</a>
         </nav>
+        <div id="lang-switch" style="display:flex;gap:0.5em;align-items:center;margin-left:1em;">
+            <img src="flag-se.svg" alt="Svenska" aria-label="Svenska" id="flag-se" style="width:32px;cursor:pointer;" tabindex="0">
+            <img src="flag-gb.svg" alt="English" aria-label="English" id="flag-gb" style="width:32px;cursor:pointer;" tabindex="0">
+        </div>
     </header>
 
     <section class="hero">
         <img src="logo_white_clove.png" alt="Copain Bageri" class="hero-logo">
         <img src="hero-bread.jpg" alt="Bröd på bord" style="width:100%;max-width:700px;border-radius:16px;margin:2em auto 1em;display:block;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
-        <p>Hantverksbröd med kärlek 🍞</p>
-        <a href="#sortiment" class="btn">Se vårt sortiment</a>
+        <p data-key="heroText">Hantverksbröd med kärlek 🍞</p>
+        <a href="#sortiment" class="btn" data-key="heroBtn">Se vårt sortiment</a>
     </section>
 
     <section id="om-oss" class="text-img">
         <img src="bakery-interior.jpg" alt="Bagerimiljö">
         <div>
-            <h2>Om oss</h2>
-            <p>Vi är ett litet hantverksbageri med passion för surdegsbröd och goda bakverk. Välkommen in till doften av nybakat!</p>
-            <a href="#" class="btn-small">Läs mer</a>
+            <h2 data-key="aboutTitle">Om oss</h2>
+            <p data-key="aboutText">Vi är ett litet hantverksbageri med passion för surdegsbröd och goda bakverk. Välkommen in till doften av nybakat!</p>
+            <a href="#" class="btn-small" data-key="aboutBtn">Läs mer</a>
         </div>
     </section>
 
     <section id="sortiment" class="grid">
         <div class="card">
             <img src="levain.jpg" alt="Levain">
-            <h3>Levain</h3>
-            <a href="#" class="btn-small">Läs mer</a>
+            <h3 data-key="levain">Levain</h3>
+            <a href="#" class="btn-small" data-key="cardBtn">Läs mer</a>
         </div>
         <div class="card">
             <img src="bullar.jpg" alt="Bullar">
-            <h3>Bullar</h3>
-            <a href="#" class="btn-small">Läs mer</a>
+            <h3 data-key="bullar">Bullar</h3>
+            <a href="#" class="btn-small" data-key="cardBtn">Läs mer</a>
         </div>
         <div class="card">
             <img src="kakor.jpg" alt="Kakor">
-            <h3>Kakor</h3>
-            <a href="#" class="btn-small">Läs mer</a>
+            <h3 data-key="kakor">Kakor</h3>
+            <a href="#" class="btn-small" data-key="cardBtn">Läs mer</a>
         </div>
     </section>
 
     <section id="bestall" class="form-section">
-        <h2>Förbeställning</h2>
-        <p>Planera ditt besök och förbeställ ditt favoritbröd eller bullar direkt här.</p>
+        <h2 data-key="orderTitle">Förbeställning</h2>
+        <p data-key="orderDesc">Planera ditt besök och förbeställ ditt favoritbröd eller bullar direkt här.</p>
         <form name="bestallning" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/tack.html">
             <input type="hidden" name="form-name" value="bestallning" />
             <p class="hidden">
                 <label>Fyll inte i detta om du är människa: <input name="bot-field" /></label>
             </p>
             <p>
-                <label for="name">Namn:</label>
+                <label for="name" data-key="name">Namn:</label>
                 <input type="text" id="name" name="name" required>
             </p>
             <p>
-                <label for="email">Email:</label>
+                <label for="email" data-key="email">Email:</label>
                 <input type="email" id="email" name="email" required>
             </p>
             <p>
-                <label for="date">Önskat datum:</label>
+                <label for="date" data-key="date">Önskat datum:</label>
                 <input type="date" id="date" name="date" required>
             </p>
             <p>
-                <label for="message">Din beställning:</label>
+                <label for="message" data-key="message">Din beställning:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </p>
             <div data-netlify-recaptcha="true"></div>
             <p>
-                <button type="submit" class="btn">Skicka beställning</button>
+                <button type="submit" class="btn" data-key="send">Skicka beställning</button>
             </p>
-            <p style="font-size:0.95em;color:#555;margin-top:-0.5em;">
+            <p style="font-size:0.95em;color:#555;margin-top:-0.5em;" data-key="gdpr">
                 🔒 Vi behandlar dina uppgifter enligt GDPR. De används endast för att hantera din förfrågan och sparas inte längre än nödvändigt.
             </p>
             <p style="font-size:0.95em;color:#555;margin-top:-1em;">
-                <a href="Integritetspolicy.pdf" target="_blank" style="color:#091f09;text-decoration:underline;">Läs vår integritetspolicy här</a>
+                <a href="Integritetspolicy.pdf" target="_blank" style="color:#091f09;text-decoration:underline;" data-key="policy">Läs vår integritetspolicy här</a>
             </p>
         </form>
     </section>
 
     <footer id="kontakt">
         <img src="logo_white_no_clove.png" alt="Copain Bageri" class="footer-logo">
-        <h3>Kontakt</h3>
-        <p>Mail: bageriet@copain.se</p>
-        <p>Adress: Sankt Sigfrids Plan 7, 412 66 Göteborg</p>
+        <h3 data-key="contactTitle">Kontakt</h3>
+        <p data-key="contactMail">Mail: bageriet@copain.se</p>
+        <p data-key="contactAddress">Adress: Sankt Sigfrids Plan 7, 412 66 Göteborg</p>
     </footer>
+<script>
+// Enkel språkväxling: svenska och engelska
+const translations = {
+  sv: {
+    navHome: 'Hem',
+    navAbout: 'Om oss',
+    navProducts: 'Sortiment',
+    navOrder: 'Förbeställ',
+    navContact: 'Kontakt',
+    heroText: 'Hantverksbröd med kärlek 🍞',
+    heroBtn: 'Se vårt sortiment',
+    aboutTitle: 'Om oss',
+    aboutText: 'Vi är ett litet hantverksbageri med passion för surdegsbröd och goda bakverk. Välkommen in till doften av nybakat!',
+    aboutBtn: 'Läs mer',
+    levain: 'Levain',
+    bullar: 'Bullar',
+    kakor: 'Kakor',
+    cardBtn: 'Läs mer',
+    orderTitle: 'Förbeställning',
+    orderDesc: 'Planera ditt besök och förbeställ ditt favoritbröd eller bullar direkt här.',
+    name: 'Namn:',
+    email: 'Email:',
+    date: 'Önskat datum:',
+    message: 'Din beställning:',
+    send: 'Skicka beställning',
+    gdpr: '🔒 Vi behandlar dina uppgifter enligt GDPR. De används endast för att hantera din förfrågan och sparas inte längre än nödvändigt.',
+    policy: 'Läs vår integritetspolicy här',
+    contactTitle: 'Kontakt',
+    contactMail: 'Mail: bageriet@copain.se',
+    contactAddress: 'Adress: Sankt Sigfrids Plan 7, 412 66 Göteborg'
+  },
+  en: {
+    navHome: 'Home',
+    navAbout: 'About us',
+    navProducts: 'Products',
+    navOrder: 'Pre-order',
+    navContact: 'Contact',
+    heroText: 'Artisan bread with love 🍞',
+    heroBtn: 'See our products',
+    aboutTitle: 'About us',
+    aboutText: 'We are a small artisan bakery with a passion for sourdough bread and delicious pastries. Welcome to the scent of freshly baked goods!',
+    aboutBtn: 'Read more',
+    levain: 'Levain',
+    bullar: 'Buns',
+    kakor: 'Cookies',
+    cardBtn: 'Read more',
+    orderTitle: 'Pre-order',
+    orderDesc: 'Plan your visit and pre-order your favorite bread or buns right here.',
+    name: 'Name:',
+    email: 'Email:',
+    date: 'Desired date:',
+    message: 'Your order:',
+    send: 'Send order',
+    gdpr: '🔒 We process your data according to GDPR. It is only used to handle your request and is not stored longer than necessary.',
+    policy: 'Read our privacy policy here',
+    contactTitle: 'Contact',
+    contactMail: 'Email: bageriet@copain.se',
+    contactAddress: 'Address: Sankt Sigfrids Plan 7, 412 66 Göteborg'
+  }
+};
+
+function setLang(lang) {
+  for (const key in translations[lang]) {
+    const el = document.querySelector(`[data-key="${key}"]`);
+    if (el) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
+    }
+  }
+}
+
+document.getElementById('flag-se').addEventListener('click', () => setLang('sv'));
+document.getElementById('flag-gb').addEventListener('click', () => setLang('en'));
+// Default: svenska
+setLang('sv');
+</script>
 </body>
 </html>

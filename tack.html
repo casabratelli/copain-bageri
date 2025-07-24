@@ -8,17 +8,44 @@
     <link rel="icon" href="logo_green_clove_transparent.png" type="image/png">
 </head>
 <body>
-    <header>
-        <h1>Tack för ditt meddelande! 💌</h1>
+    <header style="display:flex;justify-content:space-between;align-items:center;background:#f6edbe;padding:1em 2em;">
+        <h1 data-key="thanksTitle">Tack för ditt meddelande! 💌</h1>
+        <div id="lang-switch" style="display:flex;gap:0.5em;align-items:center;">
+            <img src="flag-se.svg" alt="Svenska" aria-label="Svenska" id="flag-se" style="width:32px;cursor:pointer;" tabindex="0">
+            <img src="flag-gb.svg" alt="English" aria-label="English" id="flag-gb" style="width:32px;cursor:pointer;" tabindex="0">
+        </div>
     </header>
     <main>
         <section>
-            <p>Vi har tagit emot din förfrågan och återkommer så snart vi kan.</p>
-            <p><a href="index.html">← Tillbaka till startsidan</a></p>
+            <p data-key="thanksText">Vi har tagit emot din förfrågan och återkommer så snart vi kan.</p>
+            <p><a href="index.html" data-key="back">← Tillbaka till startsidan</a></p>
         </section>
     </main>
     <footer>
         <p>© 2025 Copain Bageri</p>
     </footer>
+    <script>
+    const translations = {
+      sv: {
+        thanksTitle: 'Tack för ditt meddelande! 💌',
+        thanksText: 'Vi har tagit emot din förfrågan och återkommer så snart vi kan.',
+        back: '← Tillbaka till startsidan'
+      },
+      en: {
+        thanksTitle: 'Thank you for your message! 💌',
+        thanksText: 'We have received your request and will get back to you as soon as possible.',
+        back: '← Back to the homepage'
+      }
+    };
+    function setLang(lang) {
+      for (const key in translations[lang]) {
+        const el = document.querySelector(`[data-key="${key}"]`);
+        if (el) el.textContent = translations[lang][key];
+      }
+    }
+    document.getElementById('flag-se').addEventListener('click', () => setLang('sv'));
+    document.getElementById('flag-gb').addEventListener('click', () => setLang('en'));
+    setLang('sv');
+    </script>
 </body>
 </html>
