@@ -1,52 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    background-color: #F9F6F1; /* Ljus brödfärg */
-    color: #4A4A4A; /* Mörkgrå för text */
+    background-color: #f6edbe; /* New light color */
+    color: #4A4A4A;
 }
 
 h1, h2, h3 {
-    font-family: 'Lora', serif;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f6edbe; /* Light background for header */
+    padding: 1em 2em;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e0d9b4; /* Subtle border */
+}
+
+.header-logo {
+    height: 70px;
+}
 
 nav {
     display: flex;
     justify-content: center;
     gap: 1.5em;
-    background: #004225; /* British Racing Green */
     padding: 1em;
 }
+
 nav a {
     text-decoration: none;
-    color: #F9F6F1; /* Ljus brödfärg */
+    color: #091f09; /* Dark green text on light background */
     font-weight: bold;
+    transition: opacity 0.3s;
 }
+
+nav a:hover {
+    opacity: 0.7;
+}
+
 .hero {
-    background: url('placeholder-hero.jpg') center/cover no-repeat;
+    background: #091f09; /* New green */
     color: #fff;
     text-align: center;
-    padding: 5em 1em;
+    padding: 4em 1em;
 }
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
+
+.hero-logo {
+    max-width: 90%;
+    width: 350px;
+    margin-bottom: 1em;
 }
+
+.hero p {
+    font-size: 1.2em;
+    color: #f6edbe; /* New light color */
+}
+
 .btn, .btn-small {
     display: inline-block;
-    background: #004225; /* British Racing Green */
-    color: #fff;
-    padding: 0.7em 1.2em;
+    background: #091f09; /* New green */
+    color: #f6edbe; /* New light color */
+    padding: 0.8em 1.5em;
     border-radius: 4px;
     text-decoration: none;
     margin-top: 1em;
     transition: background-color 0.3s ease;
+    border: 1px solid #f6edbe;
 }
 
 .btn:hover, .btn-small:hover {
-    background: #00331e; /* Mörkare grön vid hover */
+    background: #f6edbe; /* New light color */
+    color: #091f09; /* New green */
 }
 
 .grid {
@@ -74,7 +104,7 @@ nav a {
 
 .form-section h2 {
     text-align: center;
-    color: #004225; /* British Racing Green */
+    color: #091f09; /* New green */
 }
 
 .form-section p {
@@ -106,7 +136,7 @@ form textarea {
 form input[type="text"]:focus,
 form input[type="email"]:focus,
 form textarea:focus {
-    border-color: #004225; /* British Racing Green */
+    border-color: #091f09; /* New green */
     outline: none;
 }
 
@@ -134,9 +164,14 @@ form textarea:focus {
 .text-img div {
     flex: 1 1 300px;
 }
+.footer-logo {
+    width: 120px;
+    margin-bottom: 1em;
+}
+
 footer {
-    background: #004225; /* British Racing Green */
-    color: #F9F6F1; /* Ljus brödfärg */
+    background: #091f09; /* New green */
+    color: #f6edbe; /* New light color */
     text-align: center;
     padding: 2em;
 }
