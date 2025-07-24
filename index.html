@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copain Bageri</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo_green_clove_transparent.png" type="image/png">
 </head>
 <body>
     <header>
+        <img src="logo_green_clove_transparent.png" alt="Copain Bageri Logotyp" class="header-logo">
         <nav>
             <a href="#">Hem</a>
             <a href="#om-oss">Om oss</a>
@@ -18,34 +20,35 @@
     </header>
 
     <section class="hero">
-        <h1>Copain Bageri</h1>
+        <img src="logo_white_clove.png" alt="Copain Bageri" class="hero-logo">
+        <img src="hero-bread.jpg" alt="Bröd på bord" style="width:100%;max-width:700px;border-radius:16px;margin:2em auto 1em;display:block;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
         <p>Hantverksbröd med kärlek 🍞</p>
         <a href="#sortiment" class="btn">Se vårt sortiment</a>
     </section>
 
-    <section id="sortiment" class="grid">
-        <div class="card">
-            <img src="placeholder1.jpg" alt="Levain">
-            <h3>Levain</h3>
-            <a href="#" class="btn-small">Läs mer</a>
-        </div>
-        <div class="card">
-            <img src="placeholder2.jpg" alt="Bullar">
-            <h3>Bullar</h3>
-            <a href="#" class="btn-small">Läs mer</a>
-        </div>
-        <div class="card">
-            <img src="placeholder3.jpg" alt="Kakor">
-            <h3>Kakor</h3>
+    <section id="om-oss" class="text-img">
+        <img src="bakery-interior.jpg" alt="Bagerimiljö">
+        <div>
+            <h2>Om oss</h2>
+            <p>Vi är ett litet hantverksbageri med passion för surdegsbröd och goda bakverk. Välkommen in till doften av nybakat!</p>
             <a href="#" class="btn-small">Läs mer</a>
         </div>
     </section>
 
-    <section id="om-oss" class="text-img">
-        <img src="placeholder4.jpg" alt="Bagerimiljö">
-        <div>
-            <h2>Om oss</h2>
-            <p>Vi är ett litet hantverksbageri med passion för surdegsbröd och goda bakverk. Välkommen in till doften av nybakat!</p>
+    <section id="sortiment" class="grid">
+        <div class="card">
+            <img src="levain.jpg" alt="Levain">
+            <h3>Levain</h3>
+            <a href="#" class="btn-small">Läs mer</a>
+        </div>
+        <div class="card">
+            <img src="bullar.jpg" alt="Bullar">
+            <h3>Bullar</h3>
+            <a href="#" class="btn-small">Läs mer</a>
+        </div>
+        <div class="card">
+            <img src="kakor.jpg" alt="Kakor">
+            <h3>Kakor</h3>
             <a href="#" class="btn-small">Läs mer</a>
         </div>
     </section>
@@ -67,6 +70,10 @@
                 <input type="email" id="email" name="email" required>
             </p>
             <p>
+                <label for="date">Önskat datum:</label>
+                <input type="date" id="date" name="date" required>
+            </p>
+            <p>
                 <label for="message">Din beställning:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </p>
@@ -78,6 +85,7 @@
     </section>
 
     <footer id="kontakt">
+        <img src="logo_white_no_clove.png" alt="Copain Bageri" class="footer-logo">
         <h3>Kontakt</h3>
         <p>Mail: bageriet@copain.se</p>
         <p>Adress: Sankt Sigfrids Plan 7, 412 66 Göteborg</p>
