@@ -1,0 +1,238 @@
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    background-color: #fff;
+    color: #4A4A4A;
+}
+
+h1, h2, h3 {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    font-weight: 700;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background: #091f09;
+    padding: 0.1em 2em;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e0d9b4;
+}
+
+.header-logo {
+    height: 80px;
+    margin-right: 2em;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5em;
+    flex: 1;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+#lang-switch {
+    margin-left: 1em;
+}
+
+.hero {
+    background: #091f09; /* New green */
+    color: #fff;
+    text-align: center;
+    padding: 4em 1em;
+}
+
+.hero-logo {
+    max-width: 90%;
+    width: 350px;
+    margin-bottom: 1em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #f6edbe; /* New light color */
+}
+
+.btn, .btn-small {
+    display: inline-block;
+    background: #091f09; /* New green */
+    color: #f6edbe; /* New light color */
+    padding: 0.8em 1.5em;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+    border: 1px solid #f6edbe;
+}
+
+.btn:hover, .btn-small:hover {
+    background: #f6edbe; /* New light color */
+    color: #091f09; /* New green */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1.5rem;
+    padding: 2em;
+}
+.card {
+    background: #fff;
+    padding: 1em;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.form-section {
+    background-color: #fff;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.form-section h2 {
+    text-align: center;
+    color: #091f09; /* New green */
+}
+
+.form-section p {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+form p {
+    margin-bottom: 1em;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #091f09; /* New green */
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.text-img {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2em;
+    gap: 2em;
+}
+.text-img img {
+    flex: 1 1 300px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+.text-img div {
+    flex: 1 1 300px;
+}
+.footer-logo {
+    width: 120px;
+    margin-bottom: 1em;
+}
+
+footer {
+    background: #091f09; /* New green */
+    color: #f6edbe; /* New light color */
+    text-align: center;
+    padding: 2em;
+}
+
+.hero-picture {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.zigzag-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    padding: 3em 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.zigzag-section .zigzag-text {
+    flex: 1 1 350px;
+    min-width: 280px;
+}
+.zigzag-section .zigzag-img {
+    flex: 1 1 350px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zigzag-section .zigzag-img img {
+    width: 100%;
+    max-width: 340px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    margin-bottom: 0.5em;
+}
+.zigzag-section.reverse {
+    flex-direction: row-reverse;
+}
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+@media (max-width: 900px) {
+    .zigzag-section {
+        flex-direction: column !important;
+        gap: 1.5em;
+        padding: 2em 0;
+    }
+    .zigzag-section .zigzag-img img {
+        max-width: 100%;
+    }
+}
+.footer-logo-large {
+    height: 140px;
+    display: block;
+    margin: 0 auto 1em auto;
+}
