@@ -6,7 +6,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: "p22-underground", sans-serif;
+    font-family: "p22-underground-sc", sans-serif;
     font-weight: 700;
 }
 
@@ -37,7 +37,7 @@ nav a {
     font-weight: bold;
     transition: opacity 0.3s;
     font-size: 1.1em;
-    font-family: "p22-underground", sans-serif;
+    font-family: "p22-underground-sc", sans-serif;
 }
 
 nav a:hover {
