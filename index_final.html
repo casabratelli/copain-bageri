@@ -68,20 +68,41 @@
         </div>
         <div class="zigzag-text">
             <h2>Förbeställ</h2>
-            <p>För att garantera att du får dina favoritbakverk kan du förbeställa hos oss. 
-            Detta är särskilt praktiskt för helger, kalas eller större beställningar. 
-            Ring oss eller kom in i butiken så hjälper vi dig att planera den perfekta 
-            bakverksupplevelsen.</p>
-            
-            <p>Vi tar emot beställningar för:</p>
-            <div class="inline-style-2">
-                • Födelsedagstårtor och specialtårtor<br>
-                • Bröd för stora sällskap<br>
-                • Kalas- och festbakverk<br>
-                • Julbakning och säsongsspecialiteter
+            <form name="bestallning" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="bestallning" />
+                <p class="hidden">
+                    <label>Fyll inte i detta om du är människa: <input name="bot-field" /></label>
+                </p>
+                <p>
+                    <label for="name" data-key="name">Namn:</label>
+                    <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                    <label for="email" data-key="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="date" data-key="date">Önskat datum:</label>
+                    <input type="date" id="date" name="date" required>
+                </p>
+                <p>
+                    <label for="message" data-key="message">Din beställning:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </p>
+                <div data-netlify-recaptcha="true"></div>
+                <p>
+                    <button type="submit" class="btn" data-key="send">Skicka beställning</button>
+                </p>
+                <p style="font-size:0.95em;color:#555;margin-top:-0.5em;" data-key="gdpr">
+                    🔒 Vi behandlar dina uppgifter enligt GDPR. De används endast för att hantera din förfrågan och sparas inte längre än nödvändigt.
+                </p>
+                <p style="font-size:0.95em;color:#555;margin-top:-1em;">
+                    <a href="Integritetspolicy.pdf" target="_blank" style="color:#091f09;text-decoration:underline;" data-key="policy">Läs vår integritetspolicy här</a>
+                </p>
+            </form>
+            <div id="form-thankyou" data-key="formThankYou" style="display:none;text-align:center;font-size:1.2em;color:#155724;background:#d4edda;border-radius:8px;padding:2em 1em;margin-top:2em;max-width:500px;margin-left:auto;margin-right:auto;">
+                Tack för din beställning! Vi återkommer så snart vi kan.
             </div>
-            
-     <!--       <a href="tel:031-123456" class="btn">Ring och beställ</a> -->
         </div>
     </section>
 
