@@ -235,6 +235,7 @@ footer {
 .footer-logo-large {
     height: 140px;
     display: block;
+    align-items: center;
     margin: 0 auto 1em auto;
 }
 
