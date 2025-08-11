@@ -27,7 +27,7 @@
     <!-- Om oss sektion -->
     <section id="om-oss" class="section about-section">
         <h2>Om oss</h2>
-        <p>På Copain Bageri är alla kompisar med alla!</p>
+        <p>På Copain Bageri är alla kompisar med alla! Följ oss på Instagram @copainbageri</p>
     </section>
 
     <!-- Sortiment sektion -->
@@ -59,7 +59,7 @@
         </div>
         <div class="zigzag-text">
             <h2>Förbeställ</h2>
-            <form name="bestallning" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <form name="bestallning" method="POST" data-netlify="true" data-netlify-recaptcha="true">
                 <input type="hidden" name="form-name" value="bestallning" />
                 <p class="hidden">
                     <label>Fyll inte i detta om du är människa: <input name="bot-field" /></label>
@@ -84,7 +84,7 @@
                     <div data-netlify-recaptcha="true"></div>
                 </div>
                 <p>
-                    <button type="submit" class="btn" data-key="send">Skicka beställning</button>
+                    <button type="submit" class="btn">Skicka beställning</button>
                 </p>
                 <p style="font-size:0.95em;color:#555;margin-top:-0.5em;" data-key="gdpr">
                     🔒 Vi behandlar dina uppgifter enligt GDPR. De används endast för att hantera din förfrågan och sparas inte längre än nödvändigt.
@@ -125,27 +125,43 @@
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.querySelector('form[name="bestallning"]');
             const submitButton = form.querySelector('button[type="submit"]');
+            const recaptchaDiv = document.querySelector('[data-netlify-recaptcha="true"]');
             
-            // Inaktivera submit-knappen initialt
+            // Initially disable the submit button
             submitButton.disabled = true;
 
-            // Observera reCAPTCHA elementet
-            const observer = new MutationObserver((mutations) => {
-                const recaptchaDiv = document.querySelector('[data-netlify-recaptcha="true"]');
+            // Create a function to check reCAPTCHA status
+            function checkRecaptchaStatus() {
                 const status = recaptchaDiv.getAttribute('data-netlify-recaptcha-status');
-                
-                if (status === 'success') {
-                    submitButton.disabled = false;
-                } else {
-                    submitButton.disabled = true;
-                }
+                console.log('Current reCAPTCHA status:', status); // Debug log
+                submitButton.disabled = (status !== 'success');
+            }
+
+            // Create MutationObserver
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && 
+                        mutation.attributeName === 'data-netlify-recaptcha-status') {
+                        checkRecaptchaStatus();
+                    }
+                });
             });
 
-            // Starta övervakning av reCAPTCHA elementet
-            const recaptchaDiv = document.querySelector('[data-netlify-recaptcha="true"]');
+            // Start observing
             observer.observe(recaptchaDiv, {
                 attributes: true,
                 attributeFilter: ['data-netlify-recaptcha-status']
+            });
+
+            // Check status immediately in case it's already completed
+            checkRecaptchaStatus();
+
+            // Add form submission handler
+            form.addEventListener('submit', function(e) {
+                if (submitButton.disabled) {
+                    e.preventDefault();
+                    alert('Vänligen verifiera reCAPTCHA först.');
+                }
             });
         });
     </script>
