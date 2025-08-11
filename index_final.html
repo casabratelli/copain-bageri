@@ -125,13 +125,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[name="bestallning"]');
     const submitButton = form.querySelector('button[type="submit"]');
+    const errorMsg = document.createElement('div');
+    errorMsg.style.color = '#c00';
+    errorMsg.style.marginTop = '0.5em';
+    errorMsg.style.fontWeight = 'bold';
+    errorMsg.style.display = 'none';
+    errorMsg.textContent = 'Vänligen verifiera reCAPTCHA innan du skickar.';
+    submitButton.parentNode.appendChild(errorMsg);
+
     document.getElementById('date').removeAttribute('required');
 
     function validateForm() {
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
-        // Only check required fields
         submitButton.disabled = !(name && email && message);
     }
 
@@ -140,6 +147,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     validateForm();
+
+    form.addEventListener('submit', function(e) {
+        // Try to find the Netlify reCAPTCHA checkbox inside the iframe
+        const recaptchaFrame = document.querySelector('.recaptcha-wrapper iframe');
+        let recaptchaChecked = false;
+
+        if (recaptchaFrame) {
+            try {
+                // Access the iframe's document (may fail due to cross-origin)
+                const recaptchaDoc = recaptchaFrame.contentDocument || recaptchaFrame.contentWindow.document;
+                const checkbox = recaptchaDoc.querySelector('input[type="checkbox"]');
+                if (checkbox && checkbox.checked) {
+                    recaptchaChecked = true;
+                }
+            } catch (err) {
+                // If we can't access the iframe, let Netlify handle validation
+                recaptchaChecked = true;
+            }
+        } else {
+            // If no iframe found, let Netlify handle validation
+            recaptchaChecked = true;
+        }
+
+        if (!recaptchaChecked) {
+            e.preventDefault();
+            errorMsg.style.display = 'block';
+        } else {
+            errorMsg.style.display = 'none';
+        }
+    });
 });
 </script>
 </body>
