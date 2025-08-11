@@ -122,55 +122,25 @@
 
     <!-- Add this script just before the closing </body> tag -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('form[name="bestallning"]');
-            const submitButton = form.querySelector('button[type="submit"]');
-            const recaptchaDiv = document.querySelector('[data-netlify-recaptcha="true"]');
-            
-            // Remove required attribute from date field
-            document.getElementById('date').removeAttribute('required');
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[name="bestallning"]');
+    const submitButton = form.querySelector('button[type="submit"]');
+    document.getElementById('date').removeAttribute('required');
 
-            function validateForm() {
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const message = document.getElementById('message').value.trim();
-                const recaptchaStatus = recaptchaDiv.getAttribute('data-netlify-recaptcha-status');
+    function validateForm() {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        // Only check required fields
+        submitButton.disabled = !(name && email && message);
+    }
 
-                const isFormValid = name !== '' && 
-                                  email !== '' && 
-                                  message !== '' && 
-                                  recaptchaStatus === 'success';
+    ['name', 'email', 'message'].forEach(fieldId => {
+        document.getElementById(fieldId).addEventListener('input', validateForm);
+    });
 
-                submitButton.disabled = !isFormValid;
-                return isFormValid;
-            }
-
-            // Add input event listeners to required fields
-            ['name', 'email', 'message'].forEach(fieldId => {
-                document.getElementById(fieldId).addEventListener('input', validateForm);
-            });
-
-            // Watch reCAPTCHA status changes
-            const observer = new MutationObserver(() => {
-                validateForm();
-            });
-
-            observer.observe(recaptchaDiv, {
-                attributes: true,
-                attributeFilter: ['data-netlify-recaptcha-status']
-            });
-
-            // Initial validation
-            validateForm();
-
-            // Form submission handler
-            form.addEventListener('submit', function(e) {
-                if (!validateForm()) {
-                    e.preventDefault();
-                    alert('Vänligen fyll i alla obligatoriska fält och verifiera reCAPTCHA.');
-                }
-            });
-        });
-    </script>
+    validateForm();
+});
+</script>
 </body>
 </html>
