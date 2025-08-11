@@ -89,12 +89,7 @@
                     <label for="message" data-key="message">Din beställning:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </p>
-                <div 
-                    data-netlify-recaptcha="true"
-                    data-callback="onRecaptchaSuccess"
-                    data-expired-callback="onRecaptchaExpired"
-                    data-error-callback="onRecaptchaError">
-                </div>
+                <div class="g-recaptcha" data-netlify-recaptcha="true"></div>
                 <p>
                     <button type="submit" class="btn" data-key="send">Skicka beställning</button>
                 </p>
@@ -135,28 +130,36 @@
     <!-- Add this script just before the closing </body> tag -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const submitButton = document.querySelector('button[type="submit"]');
+            const form = document.querySelector('form[name="bestallning"]');
+            const submitButton = form.querySelector('button[type="submit"]');
+            const recaptchaElement = form.querySelector('[data-netlify-recaptcha="true"]');
+            
+            // Disable submit button initially
             submitButton.disabled = true;
 
-            // Observer för att upptäcka när reCAPTCHA är verifierad
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.target.getAttribute('data-netlify-recaptcha-status') === 'success') {
-                        submitButton.disabled = false;
-                    } else {
-                        submitButton.disabled = true;
+            // Create a MutationObserver to watch for changes
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'data-netlify-recaptcha-status') {
+                        const status = recaptchaElement.getAttribute('data-netlify-recaptcha-status');
+                        console.log('reCAPTCHA status:', status); // Debug log
+                        submitButton.disabled = (status !== 'success');
                     }
                 });
             });
 
-            // Hitta reCAPTCHA elementet och starta observationen
-            const recaptchaElement = document.querySelector('[data-netlify-recaptcha="true"]');
-            if (recaptchaElement) {
-                observer.observe(recaptchaElement, {
-                    attributes: true,
-                    attributeFilter: ['data-netlify-recaptcha-status']
-                });
-            }
+            // Start observing the reCAPTCHA element
+            observer.observe(recaptchaElement, {
+                attributes: true
+            });
+
+            // Add event listener for form submission
+            form.addEventListener('submit', function(e) {
+                if (submitButton.disabled) {
+                    e.preventDefault();
+                    alert('Vänligen verifiera reCAPTCHA först');
+                }
+            });
         });
     </script>
 </body>

@@ -85,8 +85,9 @@ nav a:hover {
 }
 
 .btn:disabled {
-    background: #cccccc;
-    border-color: #bbbbbb;
+    background-color: #cccccc !important;
+    border-color: #bbbbbb !important;
+    color: #666666 !important;
     cursor: not-allowed;
     opacity: 0.7;
 }
@@ -499,4 +500,10 @@ nav {
     display: flex;
     justify-content: center;
    justify-content: center;
+}
+
+.g-recaptcha {
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
 }
