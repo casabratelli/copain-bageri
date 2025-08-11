@@ -502,8 +502,12 @@ nav {
    justify-content: center;
 }
 
-.g-recaptcha {
+.recaptcha-wrapper {
     margin: 1em 0;
     display: flex;
     justify-content: center;
+}
+
+.g-recaptcha {
+    display: inline-block;
 }
