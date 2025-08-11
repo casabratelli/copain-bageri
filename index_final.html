@@ -74,7 +74,7 @@
                 </p>
                 <p>
                     <label for="date" data-key="date">Önskat datum:</label>
-                    <input type="date" id="date" name="date" required>
+                    <input type="date" id="date" name="date">
                 </p>
                 <p>
                     <label for="message" data-key="message">Din beställning:</label>
@@ -127,40 +127,47 @@
             const submitButton = form.querySelector('button[type="submit"]');
             const recaptchaDiv = document.querySelector('[data-netlify-recaptcha="true"]');
             
-            // Initially disable the submit button
-            submitButton.disabled = true;
+            // Remove required attribute from date field
+            document.getElementById('date').removeAttribute('required');
 
-            // Create a function to check reCAPTCHA status
-            function checkRecaptchaStatus() {
-                const status = recaptchaDiv.getAttribute('data-netlify-recaptcha-status');
-                console.log('Current reCAPTCHA status:', status); // Debug log
-                submitButton.disabled = (status !== 'success');
+            function validateForm() {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+                const recaptchaStatus = recaptchaDiv.getAttribute('data-netlify-recaptcha-status');
+
+                const isFormValid = name !== '' && 
+                                  email !== '' && 
+                                  message !== '' && 
+                                  recaptchaStatus === 'success';
+
+                submitButton.disabled = !isFormValid;
+                return isFormValid;
             }
 
-            // Create MutationObserver
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.type === 'attributes' && 
-                        mutation.attributeName === 'data-netlify-recaptcha-status') {
-                        checkRecaptchaStatus();
-                    }
-                });
+            // Add input event listeners to required fields
+            ['name', 'email', 'message'].forEach(fieldId => {
+                document.getElementById(fieldId).addEventListener('input', validateForm);
             });
 
-            // Start observing
+            // Watch reCAPTCHA status changes
+            const observer = new MutationObserver(() => {
+                validateForm();
+            });
+
             observer.observe(recaptchaDiv, {
                 attributes: true,
                 attributeFilter: ['data-netlify-recaptcha-status']
             });
 
-            // Check status immediately in case it's already completed
-            checkRecaptchaStatus();
+            // Initial validation
+            validateForm();
 
-            // Add form submission handler
+            // Form submission handler
             form.addEventListener('submit', function(e) {
-                if (submitButton.disabled) {
+                if (!validateForm()) {
                     e.preventDefault();
-                    alert('Vänligen verifiera reCAPTCHA först.');
+                    alert('Vänligen fyll i alla obligatoriska fält och verifiera reCAPTCHA.');
                 }
             });
         });
