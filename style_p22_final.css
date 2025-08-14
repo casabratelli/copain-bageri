@@ -15,7 +15,7 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #091f09;
+    background: #f6edbe; /* Changed from dark to light */
     padding: 0.1em 2em;
     flex-wrap: wrap;
     border-bottom: 1px solid #e0d9b4;
