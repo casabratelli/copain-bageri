@@ -59,42 +59,30 @@
         </div>
         <div class="zigzag-text">
             <h2>Förbeställ</h2>
-            <form name="bestallning" method="POST" data-netlify="true" data-netlify-recaptcha="true">
-                <input type="hidden" name="form-name" value="bestallning" />
-                <p class="hidden">
-                    <label>Fyll inte i detta om du är människa: <input name="bot-field" /></label>
-                </p>
-                <p>
-                    <label for="name" data-key="name">Namn:</label>
-                    <input type="text" id="name" name="name" required>
-                </p>
-                <p>
-                    <label for="email" data-key="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </p>
-                <p>
-                    <label for="date" data-key="date">Önskat datum:</label>
-                    <input type="date" id="date" name="date">
-                </p>
-                <p>
-                    <label for="message" data-key="message">Din beställning:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </p>
-                <div class="recaptcha-wrapper">
-                    <div data-netlify-recaptcha="true"></div>
-                </div>
-                <p>
-                    <button type="submit" class="btn">Skicka beställning</button>
-                </p>
-                <p style="font-size:0.95em;color:#555;margin-top:-0.5em;" data-key="gdpr">
-                    🔒 Vi behandlar dina uppgifter enligt GDPR. De används endast för att hantera din förfrågan och sparas inte längre än nödvändigt.
-                </p>
-                <p style="font-size:0.95em;color:#555;margin-top:-1em;">
-                    <a href="Integritetspolicy.pdf" target="_blank" style="color:#091f09;text-decoration:underline;" data-key="policy">Läs vår integritetspolicy här</a>
-                </p>
-            </form>
-            <div id="form-thankyou" data-key="formThankYou" style="display:none;text-align:center;font-size:1.2em;color:#155724;background:#d4edda;border-radius:8px;padding:2em 1em;margin-top:2em;max-width:500px;margin-left:auto;margin-right:auto;">
-                Tack för din beställning! Vi återkommer så snart vi kan.
+            <p>Förbeställningsformuläret är tillfälligt borttaget. Kontakta oss gärna direkt via Instagram eller telefon för beställningar!</p>
+        </div>
+    </section>
+
+    <!-- Instagram sektion -->
+    <section id="instagram" class="zigzag-section reverse">
+        <div class="zigzag-img">
+            <div class="placeholder-img">
+                Senaste från Instagram
+            </div>
+        </div>
+        <div class="zigzag-text">
+            <h2>Instagram</h2>
+            <p>Följ oss på <a href="https://www.instagram.com/copainbageri/" target="_blank">@copainbageri</a> för de senaste nyheterna och bilderna!</p>
+            <!-- Instagram feed embed (SnapWidget example) -->
+            <div style="margin-top:1em;">
+                <iframe src="https://snapwidget.com/embed/1053247" 
+                    title="Instagram Feed" 
+                    class="instagram-embed" 
+                    allowtransparency="true" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    style="border:none; overflow:hidden; width:100%; max-width:400px; height:400px;">
+                </iframe>
             </div>
         </div>
     </section>
@@ -119,65 +107,5 @@
             <img src="logo_green_clove.png" alt="Copain Bageri Logotyp" class="footer-logo-large">
         </div>
     </footer>
-
-    <!-- Add this script just before the closing </body> tag -->
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form[name="bestallning"]');
-    const submitButton = form.querySelector('button[type="submit"]');
-    const errorMsg = document.createElement('div');
-    errorMsg.style.color = '#c00';
-    errorMsg.style.marginTop = '0.5em';
-    errorMsg.style.fontWeight = 'bold';
-    errorMsg.style.display = 'none';
-    errorMsg.textContent = 'Vänligen verifiera reCAPTCHA innan du skickar.';
-    submitButton.parentNode.appendChild(errorMsg);
-
-    document.getElementById('date').removeAttribute('required');
-
-    function validateForm() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        submitButton.disabled = !(name && email && message);
-    }
-
-    ['name', 'email', 'message'].forEach(fieldId => {
-        document.getElementById(fieldId).addEventListener('input', validateForm);
-    });
-
-    validateForm();
-
-    form.addEventListener('submit', function(e) {
-        // Try to find the Netlify reCAPTCHA checkbox inside the iframe
-        const recaptchaFrame = document.querySelector('.recaptcha-wrapper iframe');
-        let recaptchaChecked = false;
-
-        if (recaptchaFrame) {
-            try {
-                // Access the iframe's document (may fail due to cross-origin)
-                const recaptchaDoc = recaptchaFrame.contentDocument || recaptchaFrame.contentWindow.document;
-                const checkbox = recaptchaDoc.querySelector('input[type="checkbox"]');
-                if (checkbox && checkbox.checked) {
-                    recaptchaChecked = true;
-                }
-            } catch (err) {
-                // If we can't access the iframe, let Netlify handle validation
-                recaptchaChecked = true;
-            }
-        } else {
-            // If no iframe found, let Netlify handle validation
-            recaptchaChecked = true;
-        }
-
-        if (!recaptchaChecked) {
-            e.preventDefault();
-            errorMsg.style.display = 'block';
-        } else {
-            errorMsg.style.display = 'none';
-        }
-    });
-});
-</script>
 </body>
 </html>
