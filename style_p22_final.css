@@ -35,7 +35,7 @@ nav {
 nav a {
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
+    font-weight: 400; /* Changed from bold to normal */
     transition: opacity 0.3s;
     font-size: 1.1em;
     font-family: "p22-underground-sc", sans-serif;
