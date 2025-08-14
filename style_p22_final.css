@@ -519,3 +519,18 @@ nav {
 .g-recaptcha {
     display: inline-block;
 }
+
+.instagram-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 1em;
+    background: #fff;
+}
+
+.instagram-content {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
