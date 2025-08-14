@@ -524,7 +524,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4em 1em;
+    padding: 2em 1em; /* Reduced from 4em to 2em */
     background: #fff;
 }
 
