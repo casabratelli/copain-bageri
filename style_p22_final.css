@@ -485,6 +485,14 @@ body {
             }
         }
 
+.section-divider {
+    border: none;
+    border-top: 2px solid #e0d9b4;
+    margin: 3em auto;
+    width: 60%;
+    opacity: 0.7;
+}
+
 /* ===== Converted inline style attributes ===== */
 .inline-style-1 { margin-top: 1.5em; }
 .inline-style-2 { margin-top: 1em; }
