@@ -421,6 +421,16 @@ footer {
     }
 }
 
+/* Add this near the top or after your base styles */
+@media (min-width: 901px) {
+    .section,
+    .zigzag-section,
+    .instagram-section {
+        padding-left: 6em;
+        padding-right: 6em;
+    }
+}
+
 /* ===== Utility styles ===== */
 .inline-style-1 { margin-top: 1.5em; }
 .inline-style-2 { margin-top: 1em; }
