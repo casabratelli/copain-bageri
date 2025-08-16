@@ -410,6 +410,10 @@ footer {
     .zigzag-section .zigzag-text h2 {
         text-align: center;
     }
+
+    .zigzag-section {
+        padding-bottom: 1em !important;
+    }
 }
 
 /* Reduce spacing below Sortiment section on mobile */
