@@ -429,6 +429,10 @@ footer {
         padding-left: 6em;
         padding-right: 6em;
     }
+    .section-divider {
+        width: calc(100% - 12em); /* Matches content width with 6em left/right padding */
+        max-width: 1200px;
+    }
 }
 
 /* ===== Utility styles ===== */
