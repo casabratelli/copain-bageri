@@ -406,6 +406,18 @@ footer {
         flex-direction: column;
         gap: 1.5em;
     }
+
+    .zigzag-section .zigzag-text h2 {
+        text-align: center;
+    }
+}
+
+/* Reduce spacing below Sortiment section on mobile */
+@media (max-width: 900px) {
+    #sortiment.zigzag-section {
+        margin-bottom: 0 !important;
+        padding-bottom: 1em !important;
+    }
 }
 
 @media (max-width: 600px) {
