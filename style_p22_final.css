@@ -385,8 +385,13 @@ footer {
     .zigzag-section {
         flex-direction: column !important;
         gap: 1.5em;
-        padding: 2em 1em;
-        margin-bottom: 0; /* Reduce extra space below section */
+        padding: 1em;  /* Reduced padding */
+        margin-bottom: 0;
+    }
+
+    /* Adjust divider spacing on mobile */
+    .section-divider {
+        margin: 0.5em auto; /* Reduced margin */
     }
 
     nav {
