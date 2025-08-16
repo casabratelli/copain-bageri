@@ -386,6 +386,7 @@ footer {
         flex-direction: column !important;
         gap: 1.5em;
         padding: 2em 1em;
+        margin-bottom: 0; /* Reduce extra space below section */
     }
 
     nav {
