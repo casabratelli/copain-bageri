@@ -141,7 +141,7 @@ nav a:hover {
 /* ===== Zigzag section styles ===== */
 .zigzag-section {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 3em;
     padding: 3em 2em;
