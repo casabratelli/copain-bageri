@@ -397,7 +397,7 @@ footer {
 
     /* Adjust divider spacing on mobile */
     .section-divider {
-        margin: 0.5em auto; /* Reduced margin */
+        margin: 2em auto; /* Reduced margin */
     }
 
     nav {
