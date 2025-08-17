@@ -140,7 +140,7 @@ nav a:hover {
 
 @media (max-width: 900px) {
     .section-divider {
-        margin: 2em auto; /* Added mobile-specific margin */
+        margin: 3em auto; /* Added mobile-specific margin */
     }
 }
 
