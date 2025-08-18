@@ -211,7 +211,7 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2em 1em;
+    padding: 0 1em 2em 1em; /* Reduced top padding to 0, kept other padding */
     background: #fff;
 }
 
