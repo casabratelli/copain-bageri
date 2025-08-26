@@ -24,7 +24,7 @@ h1, h2, h3 {
 
 .header-logo {
     height: 130px;  /* Increased from 100px to 130px (30% larger) */
-    margin: 2em auto 0.1em auto;
+    margin: 0.5em auto 0.1em auto;
     display: block;
 }
 
