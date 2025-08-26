@@ -31,7 +31,7 @@ h1, h2, h3 {
 .logo {
     font-size: 3em;
     font-weight: 700;
-    color: #091f09;
+    color: #0e2c0b;
     margin-bottom: 0.5em;
     font-family: "p22-underground-sc", sans-serif;
 }
@@ -48,7 +48,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #091f09;
+    color: #0e2c0b;
     font-weight: 400;
     font-size: 1.1em;
     font-family: "p22-underground-sc", sans-serif;
@@ -59,7 +59,7 @@ nav a {
 
 nav a:hover {
     opacity: 0.7;
-    background-color: #091f09;
+    background-color: #0e2c0b;
     color: #f6edbe;
 }
 
@@ -69,7 +69,7 @@ nav a:hover {
 
 /* ===== Hero styles ===== */
 .hero {
-    background: #091f09;
+    background: #0e2c0b;
     color: #fff;
     text-align: center;
     padding: 4em 1em;
@@ -111,7 +111,7 @@ nav a:hover {
 }
 
 .section h2 {
-    color: #091f09;
+    color: #0e2c0b;
     font-size: 2.5em;
     margin-bottom: 1em;
 }
@@ -225,7 +225,7 @@ nav a:hover {
 /* ===== Button styles ===== */
 .btn, .btn-small {
     display: inline-block;
-    background: #091f09;
+    background: #0e2c0b;
     color: #f6edbe;
     padding: 0.8em 1.5em;
     border-radius: 4px;
@@ -239,7 +239,7 @@ nav a:hover {
 
 .btn:hover, .btn-small:hover {
     background: #f6edbe;
-    color: #091f09;
+    color: #0e2c0b;
 }
 
 .btn:disabled {
@@ -290,7 +290,7 @@ nav a:hover {
 
 .form-section h2 {
     text-align: center;
-    color: #091f09;
+    color: #0e2c0b;
 }
 
 .form-section p {
@@ -322,7 +322,7 @@ form textarea {
 form input[type="text"]:focus,
 form input[type="email"]:focus,
 form textarea:focus {
-    border-color: #091f09;
+    border-color: #0e2c0b;
     outline: none;
 }
 
@@ -363,7 +363,7 @@ form textarea:focus {
 }
 
 footer {
-    background: #091f09;
+    background: #0e2c0b;
     color: #f6edbe;
     text-align: center;
     padding: 2em;
