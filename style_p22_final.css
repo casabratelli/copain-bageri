@@ -159,10 +159,10 @@ nav a:hover {
 .zigzag-section .zigzag-text {
     flex: 1 1 0;
     min-width: 280px;
-    max-width: 400px; /* Reduced from 500px for better centering */
+    max-width: 450px; /* Ökad från 400px för bättre proportion */
     text-align: center;
-    margin: 0;  /* Remove auto margins */
-    padding: 0 4em; /* Add padding instead to center text between image and divider */
+    margin: 0;
+    padding: 0 2em; /* Minskad från 4em för att flytta texten närmare bilden */
 }
 
 .zigzag-section .zigzag-img {
@@ -467,4 +467,17 @@ footer {
 
 .g-recaptcha {
     display: inline-block;
+}
+
+@media (min-width: 901px) {
+    .section,
+    .zigzag-section,
+    .instagram-section {
+        padding-left: 6em;
+        padding-right: 6em;
+    }
+    .section-divider {
+        width: calc(100% - 12em);
+        max-width: 1200px;
+    }
 }
