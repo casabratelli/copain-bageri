@@ -149,7 +149,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3em;
+    gap: 2em; /* Minskat från 3em till 2em */
     padding: 3em 2em;
     max-width: 1200px;
     margin: 0 auto;
