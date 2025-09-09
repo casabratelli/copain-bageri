@@ -159,9 +159,10 @@ nav a:hover {
 .zigzag-section .zigzag-text {
     flex: 1 1 0;
     min-width: 280px;
-    max-width: 500px; /* Add max-width to control text width */
+    max-width: 400px; /* Reduced from 500px for better centering */
     text-align: center;
-    margin: 0 auto; /* Center the text block */
+    margin: 0;  /* Remove auto margins */
+    padding: 0 4em; /* Add padding instead to center text between image and divider */
 }
 
 .zigzag-section .zigzag-img {
@@ -421,8 +422,9 @@ footer {
         gap: 1.5em;
     }
 
-    .zigzag-section .zigzag-text h2 {
-        /* Remove: text-align: center; */
+    .zigzag-section .zigzag-text {
+        padding: 0; /* Remove padding on mobile */
+        margin: 0 auto; /* Center on mobile */
     }
 
     .zigzag-section {
@@ -449,20 +451,6 @@ footer {
     
     .section h2 {
         font-size: 2em;
-    }
-}
-
-/* Add this near the top or after your base styles */
-@media (min-width: 901px) {
-    .section,
-    .zigzag-section,
-    .instagram-section {
-        padding-left: 4em; /* Reduced from 6em */
-        padding-right: 4em; /* Reduced from 6em */
-    }
-    .section-divider {
-        width: calc(100% - 8em); /* Adjusted to match new padding */
-        max-width: 1200px;
     }
 }
 
