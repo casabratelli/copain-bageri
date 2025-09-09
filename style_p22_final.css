@@ -157,8 +157,9 @@ nav a:hover {
 }
 
 .zigzag-section .zigzag-text {
-    flex: 1 1 0; /* Changed from flex: 1 1 350px */
+    flex: 1 1 0;
     min-width: 280px;
+    text-align: center; /* Add center alignment for all text */
 }
 
 .zigzag-section .zigzag-img {
@@ -419,7 +420,7 @@ footer {
     }
 
     .zigzag-section .zigzag-text h2 {
-        text-align: center;
+        /* Remove: text-align: center; */
     }
 
     .zigzag-section {
