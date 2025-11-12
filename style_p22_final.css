@@ -15,7 +15,7 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f8d9bc; /* Changed to desired light color */
+    background: #f8f1db; /* Changed to desired light color */
     padding: 0.1em 2em;
     flex-wrap: wrap;
     border-bottom: 1px solid #e0d9b4;
