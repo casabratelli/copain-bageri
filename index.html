@@ -5,219 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copain Bageri</title>
     <link rel="stylesheet" href="https://use.typekit.net/asf7weq.css">
-    <link rel="stylesheet" href="style_p22.css">
-    <link rel="icon" href="logo_green_clove_transparent.png" type="image/png">
+    <link rel="stylesheet" href="style_p22_final.css">
+    <link rel="icon" href="logo_green_clove_small.png" type="image/png">
 </head>
 <body>
-    <header>
-        <img src="logo_green_no_clove_low.jpeg" alt="Copain Bageri Logotyp" class="header-logo">
-        <nav>
-            <a href="#om-oss" data-key="navAbout">Om oss</a>
-            <a href="#sortiment" data-key="navProducts">Sortiment</a>
-            <a href="#bestall" data-key="navOrder">Förbeställ</a>
-            <a href="#kontakt" data-key="navContact">Kontakt</a>
-        </nav>
-        <div id="lang-switch" style="display:flex;gap:0.5em;align-items:center;">
-            <img src="flag-se.svg" alt="Svenska" aria-label="Svenska" id="flag-se" style="width:32px;cursor:pointer;" tabindex="0">
-            <img src="flag-gb.svg" alt="English" aria-label="English" id="flag-gb" style="width:32px;cursor:pointer;" tabindex="0">
+    <!-- Header med logotype och meny -->
+    <header class="header">
+        <div class="logo">
+            <img src="copain_bageri_logo_transparent_tryck.PNG" alt="Copain Bageri Logotyp" class="header-logo">
         </div>
+        <nav>
+            <a href="#bageriet">Bageriet</a>
+            <a href="#sortiment">Sortiment</a>
+            <a href="#forbestall">Förbeställ</a>
+        </nav>
     </header>
 
-    <div class="hero-picture">
-        <img src="Bullar_Horisontell.png" alt="Bröd på bord" style="width:100%;height:420px;object-fit:cover;display:block;">
-    </div>
-
-    <section id="om-oss" class="zigzag-section">
-        <div class="zigzag-text">
-            <h2 data-key="aboutTitle">Om oss</h2>
-            <p data-key="aboutText">Vi är ett litet hantverksbageri med passion för surdegsbröd och goda bakverk. Välkommen in till doften av nybakat!</p>
-        </div>
-        <div class="zigzag-img">
-            <img src="bakery-interior.jpg" alt="Bagerimiljö">
-        </div>
+    <!-- Hero bild -->
+    <section class="hero-picture">
+        <img src="surdegsbrod.jpg" alt="Copain Bageri Hero" class="hero-img">
     </section>
 
+    <!-- Om oss sektion -->
+    <section id="bageriet" class="section about-section">
+        <h2>Copain Bageri</h2>
+        <p>Vi är Copain Bageri – ett litet bageri med stort hjärta, mitt vid Sankt Sigfrids Plan i Örgryte. På helgerna hittar du oss hos våra kompisar på <a href="https://www.instagram.com/grytetgbg/" target="_blank">Grytet</a>  på Bögatan 1, där vi säljer våra bröd och bakverk. Vill du beställa? Det går fint – du hittar mer information <a href="#forbestall">längre ner</a> på sidan.
+            <br><br>Vi bakar allt med omsorg, tid och riktigt bra råvaror. Vårt mjöl är ekologiskt och våra bröd jäser med surdeg, precis som vi tycker att bröd ska få göra – långsamt och naturligt.
+            <br><br>Bilderna här på sidan har vår kompis <a href="https://www.instagram.com/joakimblomquistphotography/" target="_blank">Joakim Blomquist</a> tagit. Han har fångat Copain så som vi själva ser det – enkelt, varmt och med kärlek till hantverket. 
+        </p>
+    </section>
+
+    <!-- Divider -->
+    <hr class="section-divider">
+
+    <!-- Sortiment sektion -->
     <section id="sortiment" class="zigzag-section">
         <div class="zigzag-img">
-            <img src="Surdeg.png" alt="Sortiment">
+            <img src="pastries.jpg" alt="Vårt färska sortiment" />
         </div>
         <div class="zigzag-text">
-            <h2 data-key="navProducts">Sortiment</h2>
-            <p data-key="productsText">Vi bakar dagligen ett urval av surdegsbröd, bullar och kakor – allt på ekologiska råvaror och med mycket kärlek till hantverket. Välkommen att upptäcka vårt sortiment i butiken!</p>
-        </div>
-    </section>
-
-    <section id="instagram" class="zigzag-section">
-        <div class="zigzag-text">
-            <h2 data-key="instagramTitle">Följ oss på Instagram</h2>
-            <p data-key="instagramText">Se våra senaste bilder och följ vår vardag i bageriet!</p>
-        </div>
-        <div class="zigzag-img">
-            <!-- Instagram-widget eller placeholder-bild -->
-            <div style="background:#eee;border-radius:12px;min-height:300px;display:flex;align-items:center;justify-content:center;">
-                <span style="color:#aaa;">[Instagram-flöde här]</span>
+            <h2>Sortiment</h2>
+            <p>Vårt dagsfärska sortiment inkluderar allt från klassiska surdegsbröd och rågbröd till söta godsaker som kanelbullar och croissanter. Varje vecka publicerar vi veckans sortiment på Instagram.</p>
+            <div class="inline-style-1">
+                <strong>Specialiteter:</strong><br>
+                • Surdegsbröd och frallor<br>
+                • Kanel- och kardemummabullar<br>
+                • Croissanter och Tebirkes<br>
+                • Chocolate Chip Cookies och Chokladbiskvier
             </div>
         </div>
     </section>
 
-    <section id="bestall" class="form-section">
-        <h2 data-key="orderTitle">Förbeställning</h2>
-        <p data-key="orderDesc">Planera ditt besök och förbeställ ditt favoritbröd eller bullar direkt här.</p>
-        <form name="bestallning" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="bestallning" />
-            <p class="hidden">
-                <label>Fyll inte i detta om du är människa: <input name="bot-field" /></label>
-            </p>
-            <p>
-                <label for="name" data-key="name">Namn:</label>
-                <input type="text" id="name" name="name" required>
-            </p>
-            <p>
-                <label for="email" data-key="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </p>
-            <p>
-                <label for="date" data-key="date">Önskat datum:</label>
-                <input type="date" id="date" name="date" required>
-            </p>
-            <p>
-                <label for="message" data-key="message">Din beställning:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </p>
-            <div data-netlify-recaptcha="true"></div>
-            <p>
-                <button type="submit" class="btn" data-key="send">Skicka beställning</button>
-            </p>
-            <p style="font-size:0.95em;color:#555;margin-top:-0.5em;" data-key="gdpr">
-                🔒 Vi behandlar dina uppgifter enligt GDPR. De används endast för att hantera din förfrågan och sparas inte längre än nödvändigt.
-            </p>
-            <p style="font-size:0.95em;color:#555;margin-top:-1em;">
-                <a href="Integritetspolicy.pdf" target="_blank" style="color:#091f09;text-decoration:underline;" data-key="policy">Läs vår integritetspolicy här</a>
-            </p>
-        </form>
-        <div id="form-thankyou" data-key="formThankYou" style="display:none;text-align:center;font-size:1.2em;color:#155724;background:#d4edda;border-radius:8px;padding:2em 1em;margin-top:2em;max-width:500px;margin-left:auto;margin-right:auto;">
-            Tack för din beställning! Vi återkommer så snart vi kan.
+    <!-- Divider -->
+    <hr class="section-divider">
+
+    <!-- Förbeställ sektion -->
+    <section id="forbestall" class="zigzag-section reverse">
+        <div class="zigzag-img">
+            <img src="paketering.jpg" alt="Förbeställ dina favoriter" />
+        </div>
+        <div class="zigzag-text">
+            <h2>Förbeställ</h2>
+            <p>Vi tar gärna emot förbeställningar! Kontakta oss via ett direktmeddelande på <a href="https://www.instagram.com/copainbageri/" target="_blank">Instagram</a> eller ett mail till <a href="mailto:copain@copainbageri.se">copain@copainbageri.se</a> så löser vi det.</p>
         </div>
     </section>
 
-    <footer id="kontakt">
-        <img src="logo_green_clove.png" alt="Copain Bageri" class="footer-logo footer-logo-large">
-        <h3 data-key="contactTitle">Kontakt</h3>
-        <p data-key="contactMail">Mail: bageriet@copain.se</p>
-        <p data-key="contactAddress">Adress: Sankt Sigfrids Plan 7, 412 66 Göteborg</p>
+    <!-- Divider
+    <hr class="section-divider">
+    -->
+    <!-- Instagram sektion 
+    <section id="instagram" class="instagram-section">
+        <div class="instagram-content">
+            <h2>Instagram</h2>
+            <p>Följ oss på <a href="https://www.instagram.com/copainbageri/" target="_blank">@copainbageri</a> för de senaste nyheterna och bilderna!</p>
+            <div style="margin-top:1em;">
+                <iframe src="https://snapwidget.com/embed/1053247" 
+                    title="Instagram Feed" 
+                    class="instagram-embed" 
+                    allowtransparency="true" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    style="border:none; overflow:hidden; width:100%; max-width:400px; height:200px;">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    -->
+    <!-- Footer -->
+    <footer>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h4>Adress</h4>
+                <p>Sankt Sigfrids Plan 7<br>412 66 Göteborg</p>
+            </div>
+            <div class="contact-item">
+                <h4>Telefon</h4>
+                <p>0760-210 780</p>
+            </div>
+            <div class="contact-item">
+                <h4>Email</h4>
+                <p>
+                    <a href="mailto:copain@copainbageri.se">copain@copainbageri.se</a>
+                </p>
+            </div>
+            <div class="contact-item">
+                <h4>Instagram</h4>
+                <p>
+                    <a href="https://www.instagram.com/copainbageri/" target="_blank">@copainbageri</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-logo-large">
+            <img src="logo_footer2.png" alt="Copain Bageri Footer Logotyp" class="footer-logo-large">
+        </div>
     </footer>
-<script>
-// Enkel språkväxling: svenska och engelska
-const translations = {
-  sv: {
-    navHome: 'Hem',
-    navAbout: 'Om oss',
-    navProducts: 'Sortiment',
-    navOrder: 'Förbeställ',
-    navContact: 'Kontakt',
-    heroText: 'Hantverksbröd med kärlek 🍞',
-    heroBtn: 'Se vårt sortiment',
-    aboutTitle: 'Om oss',
-    aboutText: 'Vi är ett litet hantverksbageri med passion för surdegsbröd och goda bakverk. Välkommen in till doften av nybakat!',
-    productsText: 'Vi bakar dagligen ett urval av surdegsbröd, bullar och kakor – allt på ekologiska råvaror och med mycket kärlek till hantverket. Välkommen att upptäcka vårt sortiment i butiken!',
-    instagramTitle: 'Följ oss på Instagram',
-    instagramText: 'Se våra senaste bilder och följ vår vardag i bageriet!',
-    aboutBtn: 'Läs mer',
-    levain: 'Levain',
-    bullar: 'Bullar',
-    kakor: 'Kakor',
-    cardBtn: 'Läs mer',
-    orderTitle: 'Förbeställning',
-    orderDesc: 'Planera ditt besök och förbeställ ditt favoritbröd eller bullar direkt här.',
-    name: 'Namn:',
-    email: 'Email:',
-    date: 'Önskat datum:',
-    message: 'Din beställning:',
-    send: 'Skicka beställning',
-    gdpr: '🔒 Vi behandlar dina uppgifter enligt GDPR. De används endast för att hantera din förfrågan och sparas inte längre än nödvändigt.',
-    policy: 'Läs vår integritetspolicy här',
-    contactTitle: 'Kontakt',
-    contactMail: 'Mail: bageriet@copain.se',
-    contactAddress: 'Adress: Sankt Sigfrids Plan 7, 412 66 Göteborg',
-    formThankYou: 'Tack för din beställning! Vi återkommer så snart vi kan.'
-  },
-  en: {
-    navHome: 'Home',
-    navAbout: 'About us',
-    navProducts: 'Products',
-    navOrder: 'Pre-order',
-    navContact: 'Contact',
-    heroText: 'Artisan bread with love 🍞',
-    heroBtn: 'See our products',
-    aboutTitle: 'About us',
-    aboutText: 'We are a small artisan bakery with a passion for sourdough bread and delicious pastries. Welcome to the scent of freshly baked goods!',
-    productsText: 'We bake a daily selection of sourdough bread, buns and cookies – all with organic ingredients and a true love for the craft. Discover our range in the shop!',
-    instagramTitle: 'Follow us on Instagram',
-    instagramText: 'See our latest photos and follow our everyday life in the bakery!',
-    aboutBtn: 'Read more',
-    levain: 'Levain',
-    bullar: 'Buns',
-    kakor: 'Cookies',
-    cardBtn: 'Read more',
-    orderTitle: 'Pre-order',
-    orderDesc: 'Plan your visit and pre-order your favorite bread or buns right here.',
-    name: 'Name:',
-    email: 'Email:',
-    date: 'Desired date:',
-    message: 'Your order:',
-    send: 'Send order',
-    gdpr: '🔒 We process your data according to GDPR. It is only used to handle your request and is not stored longer than necessary.',
-    policy: 'Read our privacy policy here',
-    contactTitle: 'Contact',
-    contactMail: 'Email: bageriet@copain.se',
-    contactAddress: 'Address: Sankt Sigfrids Plan 7, 412 66 Göteborg',
-    formThankYou: 'Thank you for your order! We will get back to you as soon as possible.'
-  }
-};
-
-function setLang(lang) {
-  for (const key in translations[lang]) {
-    const el = document.querySelector(`[data-key="${key}"]`);
-    if (el) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = translations[lang][key];
-      } else {
-        el.textContent = translations[lang][key];
-      }
-    }
-  }
-  // Om tackmeddelandet är synligt, uppdatera även det
-  const thankYou = document.getElementById('form-thankyou');
-  if (thankYou && thankYou.style.display !== 'none') {
-    thankYou.textContent = translations[lang].formThankYou;
-  }
-}
-
-document.getElementById('flag-se').addEventListener('click', () => setLang('sv'));
-document.getElementById('flag-gb').addEventListener('click', () => setLang('en'));
-// Default: svenska
-setLang('sv');
-
-// Form hantering för tackmeddelande
-const form = document.querySelector('form[name="bestallning"]');
-const thankYou = document.getElementById('form-thankyou');
-if(form && thankYou) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    fetch('/', {
-      method: 'POST',
-      body: data,
-    }).then(() => {
-      form.style.display = 'none';
-      thankYou.style.display = 'block';
-    }).catch(() => {
-      form.style.display = 'none';
-      thankYou.style.display = 'block';
-      thankYou.textContent = 'Tack! Något gick fel, men vi har tagit emot din beställning.';
-    });
-  });
-}
-</script>
 </body>
 </html>
