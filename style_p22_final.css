@@ -115,6 +115,12 @@ nav a:hover {
     margin: 0;
 }
 
+@media (max-width: 900px) {
+    .photo-credit {
+        font-size: 0.8em;
+    }
+}
+
 /* ===== Section styles ===== */
 .section {
     padding: 3em 2em;
