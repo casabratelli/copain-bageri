@@ -129,6 +129,19 @@ nav a:hover {
     margin: 0 auto;
 }
 
+.map-image {
+    display: block;
+    margin: 1em auto 0;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 901px) {
+    .map-image {
+        max-width: 70%;
+    }
+}
+
 /* Divider */
 .section-divider {
     border: none;
